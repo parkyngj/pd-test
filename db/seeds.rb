@@ -1,6 +1,6 @@
 20.times do
-  User.create!( username: Faker::Internet.user_name, 
-                email: Faker::Internet.email, 
+  User.create!( username: Faker::Internet.user_name,
+                email: Faker::Internet.email,
                 password: "djkms5",
                 is_moderator: false )
 end
