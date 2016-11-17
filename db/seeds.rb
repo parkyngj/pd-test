@@ -11,8 +11,8 @@ end
 end
 
 20.times do
-  Article.create!( title: Faker::Hipster.sentences(2),
-                   body: Faker::Lorem.paragraph(2),
+  Article.create!( title: Faker::Pokemon.name,
+                   body: Faker::ChuckNorris.fact,
                    author_id: rand(1..20)
   )
 end
