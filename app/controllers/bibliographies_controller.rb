@@ -22,6 +22,7 @@ class BibliographiesController < ActionController::Base
       redirect_to @article
     else
       render 'edit'
+    end
   end
 
   def destroy
