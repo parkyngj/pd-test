@@ -1,7 +1,10 @@
 class ArticlesController < ApplicationController
+  # before_action :authenticate_user!, except: [:index]
 
   def index
     @articles = Article.all
+    @search = Article.ransack(params[:q])
+    @articles = @search.result
   end
 
   def new
