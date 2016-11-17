@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to root
+    redirect_to '/'
   end
 
   private
@@ -47,4 +47,4 @@ class ArticlesController < ApplicationController
       params.require(:article).permit(:title, :body)
     end
 
-end 
+end
