@@ -1,1 +1,11 @@
-FOOTNOTE NEW PAGE
+<%= form_for [@article, @footnote] do |f| %>
+
+  <%= f.label :text %>
+  <%= f.text_area :text %>
+
+  <%= f.label :rating %>
+  <%= f.text_field :url %>
+
+  <%= f.submit %>
+
+<% end %> 
