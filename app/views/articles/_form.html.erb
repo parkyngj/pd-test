@@ -1,15 +1,17 @@
-<%= form_for @article do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
+<%= javascript_include_tag Ckeditor.cdn_url %>
 
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_field :body %>
-  </p>
+<%= form_for @article do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_area :title %>
+  </div>
 
-  <p>
-    <%= f.submit %>
-  </p>
+  <div>
+    <%= form.label :body %>
+    <%= form.cktext_area :body, rows: 10, cols: 40, ckeditor: { uiColor: '#AADC6E', toolbar: 'mini' } %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
 <% end %>
