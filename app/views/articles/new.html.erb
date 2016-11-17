@@ -1,13 +1,15 @@
 <%= javascript_include_tag Ckeditor.cdn_url %>
-<h2>Create new article:</h2>>
+<h2>Create new article:</h2>
 
 <%= form_for @article do |form| %>
   <div>
-    <%= cktext_area :title, rows: 1 %>
+    <%= form.label :title %><br>
+    <%= form.text_area :title %>
   </div>
 
   <div>
-    <%= cktext_area :body, rows: 10 %>
+    <%= form.label :body %>
+    <%= form.cktext_area :body, rows: 10, cols: 40, ckeditor: { uiColor: '#AADC6E', toolbar: 'mini' } %>
   </div>
 
   <div>
