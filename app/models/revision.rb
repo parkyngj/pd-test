@@ -1,4 +1,4 @@
 class Revision < ApplicationRecord
   belongs_to :article
-  belongs_to :user
+  belongs_to :editor, class_name: :User
 end

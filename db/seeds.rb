@@ -1,7 +1,7 @@
 20.times do
-  User.create!( username: Faker::Internet.username, 
-                email: Faker::Internet.email, 
-                password: "djkm",
+  User.create!( username: Faker::Internet.user_name,
+                email: Faker::Internet.email,
+                password: "djkms5å",
                 is_moderator: false )
 end
 
@@ -13,7 +13,7 @@ end
 20.times do
   Article.create!( title: Faker::Hipster.sentences(2),
                    body: Faker::Lorem.paragraph(2),
-                   user_id: rand(1..20)
+                   author_id: rand(1..20)
   )
 end
 
