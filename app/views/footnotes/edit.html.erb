@@ -2,5 +2,13 @@ Edit footnote for <%= @article.title %><br><br>
 
 <%= render 'form' %>
 
+<%= link_to 'Delete', [@article, @footnote],
+                        method: :delete
+                        %><br>
+
 <%= link_to 'Back', @article %>
+
+<%= link_to 'Delete Article', @article,
+                        method: :delete
+                        %><br>
 

@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
 
   resources :articles do
-    resources :bibliographies
-    resources :footnotes
+    resources :bibliographies, except: [:show]
+    resources :footnotes, except: [:show]
   end
 
 end

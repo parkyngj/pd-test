@@ -1,4 +1,4 @@
-class BibliographiesController < ActionController::Base
+class BibliographiesController < ApplicationController
 
   def new
     @article = Article.find(params[:id]) # Might break. We're testing article_id vs id
