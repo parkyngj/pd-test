@@ -226,8 +226,8 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
-  rspec-rails
   rb-readline
+  rspec-rails
   sass-rails (~> 5.0)
   shoulda-matchers
   spring
