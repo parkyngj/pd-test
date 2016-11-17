@@ -1,16 +1,12 @@
 <%= form_for @article do |f| %>
   <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name%>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
   </p>
+
   <p>
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </p>
-    
-  <p>
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
+    <%= f.label :body %><br>
+    <%= f.text_field :body %>
   </p>
 
   <p>
