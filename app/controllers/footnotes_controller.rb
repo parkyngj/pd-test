@@ -36,9 +36,6 @@ class FootnotesController < ApplicationController
     @article = Article.find(params[:article_id])
     @footnote = @article.footnotes.find(params[:id])
     @footnote.destroy
-    p "*" * 30
-    p "Are we here?"
-    p "*" * 30
     redirect_to article_path(@article)
   end
 
