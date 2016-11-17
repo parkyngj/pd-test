@@ -64,11 +64,11 @@ ActiveRecord::Schema.define(version: 20161117004803) do
     t.index ["article_id"], name: "index_photos_on_article_id", using: :btree
   end
 
-  create_table "revisions_tables", force: :cascade do |t|
+  create_table "revisions", force: :cascade do |t|
     t.integer "user_id"
     t.integer "article_id"
-    t.index ["article_id"], name: "index_revisions_tables_on_article_id", using: :btree
-    t.index ["user_id"], name: "index_revisions_tables_on_user_id", using: :btree
+    t.index ["article_id"], name: "index_revisions_on_article_id", using: :btree
+    t.index ["user_id"], name: "index_revisions_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -96,6 +96,6 @@ ActiveRecord::Schema.define(version: 20161117004803) do
   add_foreign_key "bibliographies", "articles"
   add_foreign_key "footnotes", "articles"
   add_foreign_key "photos", "articles"
-  add_foreign_key "revisions_tables", "articles"
-  add_foreign_key "revisions_tables", "users"
+  add_foreign_key "revisions", "articles"
+  add_foreign_key "revisions", "users"
 end
