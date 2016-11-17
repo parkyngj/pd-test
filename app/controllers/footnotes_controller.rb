@@ -1,4 +1,4 @@
-class FootnotesController < ActionController::Base
+class FootnotesController < ApplicationController
 
   def new
     @article = Article.find(params[:article_id])
@@ -10,7 +10,7 @@ class FootnotesController < ActionController::Base
     @footnote = @article.footnotes.new(footnote_params)
 
     if @footnote.save
-      redirect_to article_path(@article, @footnote)
+      redirect_to @article
     else
       render 'new'
     end
@@ -36,7 +36,10 @@ class FootnotesController < ActionController::Base
     @article = Article.find(params[:article_id])
     @footnote = @article.footnotes.find(params[:id])
     @footnote.destroy
-    redirect_to @article
+    p "*" * 30
+    p "Are we here?"
+    p "*" * 30
+    redirect_to article_path(@article)
   end
 
   private

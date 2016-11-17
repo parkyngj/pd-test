@@ -1,2 +1,2 @@
-class PhotosController < ActionController::Base
+class PhotosController < ApplicationController
 end
