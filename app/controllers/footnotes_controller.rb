@@ -6,7 +6,7 @@ class FootnotesController < ActionController::Base
   end
 
   def create
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:article_id])
     @footnote = @article.footnotes.new(footnote_params)
 
     if @footnote.save
