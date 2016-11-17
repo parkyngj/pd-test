@@ -1,11 +1,6 @@
-<%= form_for [@article, @footnote] do |f| %>
+New footnote for <%= @article.title %><br><br>
 
-  <%= f.label :text %>
-  <%= f.text_area :text %>
+<%= render 'form' %>
 
-  <%= f.label :rating %>
-  <%= f.text_field :url %>
+<%= link_to 'Back', @article %>
 
-  <%= f.submit %>
-
-<% end %> 
