@@ -1,2 +1,2 @@
-class UrlController < ActionController::Base
+class UrlController < ApplicationController
 end
