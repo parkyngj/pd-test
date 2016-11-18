@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
     @revised_article = Article.new(article_params)
 
     if @revised_article.save
-      @revision = Revision.create(editor_id: current_user.id, article_id: @revised_article.id)
+      @revision = Revision.create(editor_id: current_user.id, article_id: @revised_article.id, original_article_id: @article.id)
       redirect_to @revised_article
     else
       render 'edit'
