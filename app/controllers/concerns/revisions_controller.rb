@@ -1,4 +1,4 @@
-class ArticlesController < ApplicationController
+class RevisionsController < ApplicationController
 
   def index
     @article = Article.find(params[:article_id])
