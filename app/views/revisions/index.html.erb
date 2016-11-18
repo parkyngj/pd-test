@@ -1,0 +1,6 @@
+<% if current_user.is_moderator %>
+  <% @article.revisions.each do |revision| %>
+  <%= revision.id %>
+  <%= revision.editor_id%>
+  <%= revision.article_id %>
+<% end %>

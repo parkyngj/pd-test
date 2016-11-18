@@ -36,3 +36,6 @@ Search for an article:
   <%= link_to 'New Article', new_article_path %>
 <% end %>
 
+<% if user_signed_in? && @user.is_moderator == true %>
+  <%= link_to 'Revisions', revisions_path %>
+<% end %>
