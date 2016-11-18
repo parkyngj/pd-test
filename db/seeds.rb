@@ -5,6 +5,27 @@
                 is_moderator: false )
 end
 
+User.create!( username: "kathy",
+                email: "k@k.com",
+                password: "djkms5",
+                is_moderator: true )
+
+User.create!( username: "meredith",
+                email: "m@m.com",
+                password: "djkms5",
+                is_moderator: true )
+
+User.create!( username: "jay",
+                email: "j@j.com",
+                password: "djkms5",
+                is_moderator: true )
+
+User.create!( username: "derrick",
+                email: "d@d.com",
+                password: "djkms5",
+                is_moderator: true )
+
+
 20.times do
   Category.create!( name: Faker::Company.catch_phrase
     )
