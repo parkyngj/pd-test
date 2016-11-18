@@ -31,12 +31,11 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @revision = Article.create(article_params)
+    @revised_article = Article.new(article_params)
 
-    @article.revisions << Revision.new(editor_id: current_user.id, article_id: @article.id )
-
-    if @revision.save
-      redirect_to @revision
+    if @revised_article.save
+      @revision = Revision.create(editor_id: current_user.id, article_id: @revised_article.id)
+      redirect_to @revised_article
     else
       render 'edit'
     end
