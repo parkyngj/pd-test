@@ -33,18 +33,10 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @revised_article = Article.new(article_params)
 
-    art_id = 
-
     if @revised_article.save
-      @revision = Revision.create(editor_id: current_user.id, article_id: art_id, original_article_id: @article.id)
+      @revision = Revision.create(editor_id: current_user.id, article_id: @revised_article.id, original_article_id: @article.id)
 
-      @article.revisions << @revision
-      
-      p '*********************************************'
-      p art_id
-      p @revision
-      p '*********************************************'
-      redirect_to article_revisions_path(@revision.id)
+      redirect_to article_revisions_path(@article)
     else
       render 'edit'
     end
@@ -62,7 +54,7 @@ class ArticlesController < ApplicationController
     end
 
     # polymorphic self ? as revised article???
-    # 
+    #
 
     # def revision_params
     #   params.require(:revision).permit(:editor_id, :article_id,:original_article_id)
