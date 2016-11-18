@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161118021406) do
+ActiveRecord::Schema.define(version: 20161118023443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,11 @@ ActiveRecord::Schema.define(version: 20161118021406) do
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.boolean  "published"
+=======
+    t.index ["author_id"], name: "index_articles_on_author_id", using: :btree
+>>>>>>> a25a046b49b46a3a057a2bbb4a0b498982f8ae8f
   end
 
   create_table "bibliographies", force: :cascade do |t|
@@ -84,6 +88,7 @@ ActiveRecord::Schema.define(version: 20161118021406) do
     t.integer "editor_id"
     t.integer "article_id"
     t.index ["article_id"], name: "index_revisions_on_article_id", using: :btree
+    t.index ["editor_id"], name: "index_revisions_on_editor_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -107,8 +112,10 @@ ActiveRecord::Schema.define(version: 20161118021406) do
 
   add_foreign_key "article_categories", "articles"
   add_foreign_key "article_categories", "categories"
+  add_foreign_key "articles", "users", column: "author_id"
   add_foreign_key "bibliographies", "articles"
   add_foreign_key "footnotes", "articles"
   add_foreign_key "photos", "articles"
   add_foreign_key "revisions", "articles"
+  add_foreign_key "revisions", "users", column: "editor_id"
 end
