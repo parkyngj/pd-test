@@ -28,11 +28,8 @@ ActiveRecord::Schema.define(version: 20161118023443) do
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
     t.boolean  "published"
-=======
     t.index ["author_id"], name: "index_articles_on_author_id", using: :btree
->>>>>>> a25a046b49b46a3a057a2bbb4a0b498982f8ae8f
   end
 
   create_table "bibliographies", force: :cascade do |t|
