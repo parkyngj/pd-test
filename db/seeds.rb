@@ -46,7 +46,7 @@ end
 end
 
 20.times do
-  Footnote.create!( article_id: rand(1..20),
+  Footnote.createxie!( article_id: rand(1..20),
                 text: Faker::Company.catch_phrase,
                 url: Faker::Internet.url)
 end
