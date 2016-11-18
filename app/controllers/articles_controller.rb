@@ -31,9 +31,9 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @revision = Article.new(article_params)
+    @revision = Article.create(article_params)
 
-    @article.revisions << Revision.new(editior_id: current_user.id, article_id: @article.id )
+    @article.revisions << Revision.new(editor_id: current_user.id, article_id: @article.id )
 
     if @revision.save
       redirect_to @revision
